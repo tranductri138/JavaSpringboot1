@@ -6,9 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 
 @Entity
@@ -21,4 +19,8 @@ public class Department {
     @Id
     private String roomName;
     private String mission;
+
+    @ManyToOne
+    @JoinColumn(name = "employee")
+    private Employee employee;
 }
