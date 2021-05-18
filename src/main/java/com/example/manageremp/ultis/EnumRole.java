@@ -5,7 +5,7 @@ import lombok.Getter;
 
 @AllArgsConstructor
 @Getter
-public enum ERole {
+public enum EnumRole {
     ADMIN(1, "ROLE_ADMIN"), MEMBER(2, "MEMBER");
     private int roleId;
     private String roleName;

@@ -29,5 +29,4 @@ public class ManagerempApplication {
         BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder(12);
         return bCryptPasswordEncoder;
     }
-
 }

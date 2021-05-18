@@ -10,6 +10,4 @@ public class JwtTokenProvider {
     // cafi time 1h
     @Value("${security.jwt.token.expire-length:3600000}")
     private long validityInMilliseconds = 3600000; // 1h
-
-//    private
 }

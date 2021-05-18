@@ -3,7 +3,6 @@ package com.example.manageremp.service.impl;
 import com.example.manageremp.entity.User;
 import com.example.manageremp.model.UserPrinciple;
 import com.example.manageremp.repository.UserRepo;
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
