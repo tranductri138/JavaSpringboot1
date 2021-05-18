@@ -33,7 +33,7 @@ public class EmployeeController {
         return listEmp;
     }
 
-    @GetMapping("/admin/get")
+    @GetMapping("/member/get")
     public EmployeeDto employeeDto(@RequestParam(name = "id", required = true) Long id) {
         return employeeService.getEmp(id);
     }

@@ -1,12 +1,14 @@
 package com.example.manageremp.repository.impl;
 
 import com.example.manageremp.entity.Employee;
+import com.example.manageremp.entity.User;
 import com.example.manageremp.repository.EmployeeRepo;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import java.util.List;
 
 
@@ -46,7 +48,9 @@ public class EmployeeRepoImpl implements EmployeeRepo {
     @Override
     public List<Employee> searchEmp(String name, int start, int length) {
         String jql = "select e from Employee e where e.name like :name";
-        return entityManager.createQuery(jql,Employee.class).setParameter("name","%"+name+"%")
-                .setFirstResult(start).setMaxResults(length).getResultList();
+        Query query = entityManager.createQuery(jql, User.class);
+        query.setParameter("name","%"+name+"%");
+        query.setFirstResult(start).setMaxResults(length);
+        return query.getResultList();
     }
 }

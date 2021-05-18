@@ -24,5 +24,4 @@ public abstract class TimeAuditable implements Serializable {
 	public void setCreatedDate(Date createdDate) {
 		this.createdDate = createdDate;
 	}
-
 }

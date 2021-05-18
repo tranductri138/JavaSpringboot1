@@ -1,6 +1,5 @@
 package com.example.manageremp.repository;
 
-import com.example.manageremp.entity.Group;
 import com.example.manageremp.entity.User;
 
 import java.util.List;
@@ -8,13 +7,13 @@ import java.util.List;
 public interface UserRepo {
     User getUserByName(String name);
 
-    void addUser(User group);
+    void addUser(User user);
 
-    void deleteUser(String name);
+    void deleteUser(Long id);
 
-    void updateUser(User group);
+    void updateUser(User userl);
 
-    User getUser(String name);
+    User getUser(Long id);
 
     List<User> searchUser(String name, int offset, int maxPerPage);
 }

@@ -9,8 +9,8 @@ public interface DepartmentService {
     void add(DepartmentDto departmentDto);
 
     void update(DepartmentDto departmentDto);
-    void delete(Long id);
-    DepartmentDto getUser(Long id);
+    void delete(String  name);
+    DepartmentDto getDepartment(String name);
 
     List<DepartmentDto> searchUser(String name, int offset, int maxPerPage);
 }

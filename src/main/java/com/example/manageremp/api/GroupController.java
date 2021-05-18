@@ -12,19 +12,22 @@ public class GroupController {
     private GroupService groupService;
 
     @GetMapping("/admin/delete")
-    public void deleteGr(@RequestParam(name = "name",required = true)String name){
+    public void deleteGr(@RequestParam(name = "name", required = true) String name) {
         groupService.delete(name);
     }
+
     @PostMapping("/admin/add")
-    public void addGroup(@RequestBody GroupDto groupDto){
+    public void addGroup(@RequestBody GroupDto groupDto) {
         groupService.add(groupDto);
     }
-    @GetMapping("")
-    public GroupDto getGr(@RequestParam(name = "name")String name){
+
+    @GetMapping("/member/get")
+    public GroupDto getGr(@RequestParam(name = "name") String name) {
         return groupService.getGroup(name);
     }
-    @PostMapping
-    public void updateGr(@RequestBody GroupDto groupDto){
-         groupService.update(groupDto);
+
+    @PostMapping("/admin/update")
+    public void updateGr(@RequestBody GroupDto groupDto) {
+        groupService.update(groupDto);
     }
 }

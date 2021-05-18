@@ -14,4 +14,6 @@ public interface EmployeeService {
     EmployeeDto getEmp(Long id);
 
     List<EmployeeDto> searchEmp(String name, int offset, int maxPerPage);
+
+    List<EmployeeDto> searchEmp(String name);
 }

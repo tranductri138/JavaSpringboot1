@@ -65,4 +65,18 @@ public class EmployeeServiceImpl implements EmployeeService {
             return employeeDtos;
         }
     }
+
+    @Override
+    public List<EmployeeDto> searchEmp(String name) {
+        List<Employee> employeeList = employeeRepo.searchEmp(name);
+        List<EmployeeDto> employeeDtoList = new ArrayList<>();
+        if (employeeList.isEmpty()){
+            return null;
+        }else {
+            for (Employee e: employeeList){
+                employeeDtoList.add(mapper.map(e,EmployeeDto.class));
+            }
+            return employeeDtoList;
+        }
+    }
 }
