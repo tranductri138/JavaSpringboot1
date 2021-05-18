@@ -12,7 +12,6 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @SpringBootApplication
-@EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class ManagerempApplication {
     public static void main(String[] args) {

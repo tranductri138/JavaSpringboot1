@@ -6,9 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @Table(name = "user")
@@ -22,10 +20,10 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name",unique = true,nullable = false)
+    @Column(name = "name", unique = true, nullable = false)
     private String name;
 
-    @Column(name = "password",nullable = false)
+    @Column(name = "password", nullable = false)
     private String password;
 
     @Column(name = "enabled")
@@ -38,13 +36,13 @@ public class User {
 //    private Set<Role> roles = new HashSet<>();
 
 
-    @OneToOne(mappedBy = "employee")
-    private Employee employee;
+//    @OneToOne(mappedBy = "employee")
+//    private Employee employee;
 
 
     @ElementCollection
     @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), uniqueConstraints = {
-            @UniqueConstraint(columnNames = { "user_id", "role" }) })
+            @UniqueConstraint(columnNames = {"user_id", "role"})})
     @Column(name = "role")
     private List<String> roles;
 }

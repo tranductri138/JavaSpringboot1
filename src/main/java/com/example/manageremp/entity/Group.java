@@ -1,11 +1,9 @@
 package com.example.manageremp.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
@@ -18,7 +16,6 @@ public class Group {
     private String nameGruop;
     private int numberOfGr;
 
-    @ManyToOne
-    @JoinColumn(name = "employee")
-    private Employee employee;
+    @OneToMany(mappedBy = "group",cascade = CascadeType.ALL)
+    private List<Employee> employeeList;
 }

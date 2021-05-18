@@ -27,16 +27,20 @@ public class Employee {
     private String address;
     private int height;
 
-    @OneToMany(cascade = CascadeType.ALL,mappedBy = "group")
-    private List<Group> groups;
+    @ManyToOne
+    @JoinColumn(name = "group_nameGruop")
+    private Group group;
 
-    @OneToMany(cascade = CascadeType.ALL,mappedBy = "department")
-    private List<Department> departments;
+//    @OneToMany(cascade = CascadeType.ALL,mappedBy = "tableex1")
+//    private List<TableExtra1> tableExtra1s;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "position")
-    private List<Position> positions;
+//    @OneToMany(cascade = CascadeType.ALL,mappedBy = "department")
+//    private List<Department> departments;
+//
+//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "position")
+//    private List<Position> positions;
 
-    @OneToOne
-    @JoinColumn(name = "user_id")
-    private User user;
+//    @OneToOne
+//    @JoinColumn(name = "user_id")
+//    private User user;
 }

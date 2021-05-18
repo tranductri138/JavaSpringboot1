@@ -6,6 +6,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class EmployeeDto {
+    private Long id;
     private String name;
     private int age;
     private int height;
